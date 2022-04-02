@@ -1,0 +1,40 @@
+syntax = "proto3";
+option go_package = "./pb";
+
+package grpc;
+
+service BookStorage {
+  rpc GetBooksByAuthorId (BookRequest) returns (BookList) {}
+  rpc GetAuthorsByBookId (AuthorRequest) returns (AuthorList){}
+}
+
+message BookRequest {
+  uint64  author_id = 1;
+}
+
+message BookList {
+  repeated Book book = 1;
+  string error = 2;
+}
+
+message Book {
+  uint64 id = 1;
+  string title = 2;
+  string description = 3;
+  string publication_date = 4;
+}
+
+message AuthorRequest {
+  uint64  book_id = 1;
+}
+
+message AuthorList {
+  repeated Author author = 1;
+  string error = 2;
+}
+
+message Author {
+  uint64 id = 1;
+  string name = 2;
+  string surname = 3;
+}
