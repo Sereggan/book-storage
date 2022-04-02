@@ -1,9 +1,9 @@
 package service
 
 import (
-	"book-storage/internal/model"
-	"book-storage/internal/store"
 	"context"
+	"github.com/Sereggan/book-storage/internal/model"
+	"github.com/Sereggan/book-storage/internal/store"
 	"github.com/sirupsen/logrus"
 )
 

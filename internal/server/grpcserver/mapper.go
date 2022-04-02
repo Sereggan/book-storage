@@ -1,10 +1,11 @@
 package grpcserver
 
 import (
-	"book-storage/internal/delivery/grpc/pb"
-	"book-storage/internal/model"
+	"github.com/Sereggan/book-storage/internal/delivery/grpc/pb"
+	"github.com/Sereggan/book-storage/internal/model"
 )
 
+// maps internal model to external
 func mapBookListToProtoBookList(books []*model.Book) []*pb.Book {
 
 	result := make([]*pb.Book, 0, len(books))
@@ -19,6 +20,7 @@ func mapBookListToProtoBookList(books []*model.Book) []*pb.Book {
 	return result
 }
 
+// maps internal model to external
 func mapAuthorListToProtoAuthorList(authors []*model.Author) []*pb.Author {
 	result := make([]*pb.Author, 0, len(authors))
 	for _, author := range authors {

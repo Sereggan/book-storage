@@ -1,8 +1,8 @@
 package main
 
 import (
-	"book-storage/internal/delivery/grpc/pb"
 	"context"
+	"github.com/Sereggan/book-storage/internal/delivery/grpc/pb"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 	"log"
@@ -20,10 +20,27 @@ func main() {
 	defer conn.Close()
 
 	client := pb.NewBookStorageClient(conn)
-
-	req, err := client.GetBooksByAuthorId(context.Background(), &pb.BookRequest{
+	// check when there are records in books
+	resBooks, err := client.GetBooksByAuthorId(context.Background(), &pb.BookRequest{
 		AuthorId: 1,
 	})
+	logrus.Println(resBooks.Book)
 
-	logrus.Println(req)
+	// check when there are no records in books
+	resBooks, err = client.GetBooksByAuthorId(context.Background(), &pb.BookRequest{
+		AuthorId: 123,
+	})
+	logrus.Println(len(resBooks.Book) == 0)
+
+	// check when there are records in authors
+	resAuthors, err := client.GetAuthorsByBookId(context.Background(), &pb.AuthorRequest{
+		BookId: 1,
+	})
+	logrus.Println(resAuthors)
+
+	// check when there are no records in authors
+	resAuthors, err = client.GetAuthorsByBookId(context.Background(), &pb.AuthorRequest{
+		BookId: 4,
+	})
+	logrus.Println(len(resAuthors.Author) == 0)
 }

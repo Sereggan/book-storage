@@ -1,9 +1,9 @@
 package postgresql
 
 import (
-	"book-storage/internal/model"
 	"context"
 	"fmt"
+	"github.com/Sereggan/book-storage/internal/model"
 	"github.com/jackc/pgx/v4"
 )
 

@@ -1,14 +1,14 @@
 package main
 
 import (
-	"book-storage/internal/config"
-	"book-storage/internal/delivery/grpc/pb"
-	"book-storage/internal/server/grpcserver"
-	"book-storage/internal/service"
-	"book-storage/internal/store"
-	"book-storage/internal/store/postgresql"
 	"context"
 	"fmt"
+	"github.com/Sereggan/book-storage/internal/config"
+	"github.com/Sereggan/book-storage/internal/delivery/grpc/pb"
+	"github.com/Sereggan/book-storage/internal/server/grpcserver"
+	"github.com/Sereggan/book-storage/internal/service"
+	"github.com/Sereggan/book-storage/internal/store"
+	"github.com/Sereggan/book-storage/internal/store/postgresql"
 	"github.com/joho/godotenv"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"

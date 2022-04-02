@@ -1,9 +1,9 @@
 package grpcserver
 
 import (
-	"book-storage/internal/delivery/grpc/pb"
-	"book-storage/internal/service"
 	"context"
+	"github.com/Sereggan/book-storage/internal/delivery/grpc/pb"
+	"github.com/Sereggan/book-storage/internal/service"
 )
 
 type Server struct {
