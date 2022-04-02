@@ -15,13 +15,13 @@ test task Задание: Спроектировать базу данных, в
   для запуска сервиса и его окружения, через Makefile
 * код должен быть выложен на github.
 
-Result:
+# Result:
 
 * Для запуска:
-  ** go mod tidy
-  ** make run-database - запуск postgresql в docker
-  ** make generate - генерация из .proto и моков
-  ** make run - запуск сервера
-  ** make run-test-client - запуск тестового клиента
+  * go mod tidy
+  * make run-database - запуск postgresql в docker
+  * make generate - генерация из .proto и моков
+  * make run - запуск сервера
+  * make run-test-client - запуск тестового клиента
 * Комментариев в коде нет, все имена методов вполне говорят сами за себя
 * Тесты я тоже не понял на что писать, хотя сделал генерацию моков. Просто приложение, читающее из базы
